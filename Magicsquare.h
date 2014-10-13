@@ -21,6 +21,7 @@ int sumColumn( int column, MagSquare_PTR x, int magicsquaresize );
 int sumRow(int row, MagSquare_PTR x, int magicsquaresize);
 int sumDiagonal( int diagonal, MagSquare_PTR x, int magicsquaresize );
 int isMagic(MagSquare_PTR x, int magicsquaresize );
-void permuteSquare(MagSquare_PTR x);
+void permuteSquare(MagSquare_PTR x,int magicsquaresize );
 int Random (int magicsquaresize,int a[]);
+
 #endif
