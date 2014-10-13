@@ -9,3 +9,6 @@ all: $(CFILES)
 
 run: all $(OBJFILES)
 	./$(OBJFILES)
+
+clean:
+	rm –f *.o $(OBJFILES)
