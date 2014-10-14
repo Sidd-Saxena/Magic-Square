@@ -15,7 +15,7 @@ void initSquare( MagSquare_PTR x, int magicsquaresize )
 	{
 		a[m]=0;
 	}
-	*x[0][0]=16;
+	/**x[0][0]=16;
 	*x[0][1]=3;
 	*x[0][2]=2;
     *x[0][3]=13;
@@ -30,8 +30,8 @@ void initSquare( MagSquare_PTR x, int magicsquaresize )
 	*x[3][0]=12;
 	*x[3][1]=15;
 	*x[3][2]=14;
-	*x[3][3]=1;
-	/*//for loop to initialize the matrix with random nos
+	*x[3][3]=1;*/
+	//for loop to initialize the matrix with random nos
      for(i=0; i < magicsquaresize; i++)
       {
          for(j=0; j < magicsquaresize; j++) 
@@ -39,7 +39,7 @@ void initSquare( MagSquare_PTR x, int magicsquaresize )
   		  	//calling the random function to enter into the matrix
   		  		*x[i][j]=Random(magicsquaresize,a);		  				   	
   		  }
-	  }*/
+	  }
 }
 
 //function to print the magic square matrix
@@ -192,17 +192,20 @@ void permuteSquare(MagSquare_PTR x, int magicsquaresize )
 int Random (int magicsquaresize,int a[])
 {
 	int n= rand()%(magicsquaresize*magicsquaresize);
+	int returnv;
 	//check wheather the number is repeated or not
     if (a[n]==0)//not repeated
     {
 	  a[n]=-1;//change the flag
-	  return(n+1);//return the value
+	  returnv=n+1;
+	  //return(n+1);//return the value
     }
     else if(a[n]==-1)//repeated
     {
     	//call the function again
-    	Random (magicsquaresize,a);
+    	returnv = Random (magicsquaresize,a);
+    
     }
-    //return(n+1);//return the vaue
+    return returnv;//return the vaue
  }
 
